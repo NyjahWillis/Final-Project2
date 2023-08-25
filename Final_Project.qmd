@@ -124,6 +124,4 @@ per <- inline_text(table1,variable = "sex_cat", level= "Male", column = "stat_0"
 
 There are (`r Female`) Females and (`r Male`) Males in the healthy volunteer population. The overall amount of Black participants is (`r per`)
 
-```{r}
-```
 
