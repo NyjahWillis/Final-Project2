@@ -14,7 +14,6 @@ library(gtsummary)
   library(usethis)
   	library(here)
 			library(devtools)
-				library(tidyverse)
 						library(broom)
 load(here::here("Data", "smartpill.rda"))
 ```
@@ -37,7 +36,7 @@ smart_data$age_cat <- factor(ifelse(is.na(smart_data$Age),NA,
 																				 "Between 29 - 43 years",
 																				 "44 and older "))
 ```
-#Table 1
+##Table 1
 
 ```{r}
 #| echo: false
@@ -62,7 +61,7 @@ label = list(
 table1
 ```
 
-#Figure 1
+##Figure 1
 
 ```{r}
 #| echo: false
@@ -71,7 +70,7 @@ table1
 hist(smart_data$WG.Time, xlab = 'Indigestion time', ylab = 'body exit time', main = 'Whole Gut Time')
 ```
 
-#Functions
+##Functions
 
 ```{r}
 #| echo: false
@@ -80,11 +79,11 @@ smart_mean <- function(x) {
 	mean_val <- sum(x)/n
 	return(mean_val)
 }
-smart_mean(smart_data$Age)
-smart_mean(smart_data$Height)
 ```
+##Intext function 
+The average age of the participants is (`r smart_mean(smart_data$Age)`)
 
-#Regressions
+##Regressions
 
 ```{r}
 #| echo: false
@@ -112,7 +111,7 @@ tbl_regression(
 
 #Cross referencing @tbl-Smart_Pill contains a table of the participants based on their group (Critical patient vs Healthy Volunteer) @fig-SmartWGTime is showing the frequency of WG Time
 
-#inline text
+##inline text for table and figure
 
 ```{r}
 #| echo: false
